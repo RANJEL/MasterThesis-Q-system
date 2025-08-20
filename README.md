@@ -80,9 +80,9 @@ Rewrite is used in this project, so users don't have to write URL /helloworld.xh
 Lombok project is used to generate toString, equals, hashCode, getters on all fields, and setters on all non-final fields, and constructor using @Data annotation
 
 ### Java 11
-Project is buildable using Java 11. There is a known Springframework causing this warning on startup:
+Project is buildable using Java 11. There is a known Springframework causing this warning on startup:Project is buildable using Java 11. There is a known Springframework causing this warning on startup:
 WARNING: An illegal reflective access operation has occurred
-WARNING: Illegal reflective access by org.springframework.cglib.core.ReflectUtils (file:/C:/Users/JanLe/.m2/repository/org/springframework/spring-core/5.1.6.RELEASE/spring-core-5.1.6.RELEASE.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Illegal reflective access by org.springframework.cglib.core.ReflectUtils (file:~/.m2/repository/org/springframework/spring-core/5.1.6.RELEASE/spring-core-5.1.6.RELEASE.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
 WARNING: Please consider reporting this to the maintainers of org.springframework.cglib.core.ReflectUtils
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 https://stackoverflow.com/questions/46671472/illegal-reflective-access-by-org-springframework-cglib-core-reflectutils1
@@ -94,4 +94,5 @@ I suppose it will be fixed soon. For now just add this parameters when running j
 
 ### spring-boot-devtools
 Project also use spring-boot-devtools that provide Automatic restart, when classpath change (make sure your IDEA performs automatic build if you change your sources) and also provide Live reload that force browser to be up-to-date.
+
 https://www.baeldung.com/spring-boot-devtools
