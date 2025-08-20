@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions name="ISAAAQueryService"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:query="http://www.komix.cz/aaa/query"
+             targetNamespace="http://www.komix.cz/aaa/query">
+
+    <types>
+        <xsd:schema elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2019_v01">
+            <xsd:import namespace="http://www.komix.cz/aaa/query" schemaLocation="../fullInterface/ISAAAService.xsd"/>
+        </xsd:schema>
+    </types>
+
+    <!--    ANONYMIZED  -->
+
+</definitions>

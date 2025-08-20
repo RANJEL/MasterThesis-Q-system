@@ -1,0 +1,126 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+>
+
+<h:head>
+    <f:metadata>
+        <f:event
+                type="preRenderView"
+                listener="#{authorizationController.logEntryIntoAdministration('queryForms')}"/>
+    </f:metadata>
+</h:head>
+
+<h:body>
+    <ui:composition template="../../../../app.xhtml">
+        <ui:define name="content">
+            <div class="ui-grid-row">
+                <h2>#{msg['menu.administration.queryForms']}</h2>
+            </div>
+
+            <div class="ui-grid-row">
+                <p:dataTable
+                        var="item"
+                        rowIndexVar="index"
+                        value="#{authorizationController.allQueryForms}"
+                        id="queryFormsList"
+                        rows="10"
+                        paginator="true"
+                        paginatorPosition="bottom"
+                        paginatorAlwaysVisible="false"
+                        paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                        rowsPerPageTemplate="5,10,50"
+                >
+                    <p:column headerText="#{msg['generic.label.name']}">
+                        <h:outputText value="#{item.name}" />
+                    </p:column>
+                    <p:column headerText="#{msg['generic.label.description']}">
+                        <h:outputText value="#{item.description}" />
+                    </p:column>
+                    <p:column class="column-for-edit">
+                        <p:button
+                                id="#{'queryForm-'.concat(rowIndex)}"
+                                title="#{msg['generic.label.detail']}"
+                                icon="ui-icon-search"
+                                outcome="#{queryFormsController.viewQueryFormDetail(item.id)}"
+                        />
+
+                    </p:column>
+                    <p:column class="column-for-edit">
+                        <p:commandButton
+                                action="#{authorizationController.deleteQueryForm(item.name)}"
+                                title="#{msg['generic.label.delete']}"
+                                icon="ui ui-icon-trash"
+                                update="@form"
+                        >
+                            <p:confirm
+                                    header="#{msg['generic.header.confirm']}"
+                                    message="#{msg['generic.confirm.areYouSureDelete']}"
+                                    icon="ui-exclamation-triangle"
+                            />
+                        </p:commandButton>
+
+                        <!-- confirm dialog for deleting -->
+                        <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                            <p:commandButton
+                                    type="button"
+                                    value="#{msg['generic.button.delete']}"
+                                    styleClass="ui-confirmdialog-yes"
+                                    icon="ui-icon-check"
+                            />
+                            <p:commandButton
+                                    type="button"
+                                    value="#{msg['generic.button.cancel']}"
+                                    styleClass="ui-confirmdialog-no"
+                                    icon="ui-icon-cancel"
+                            />
+                        </p:confirmDialog>
+                        <!-- /confirm dialog for deleting -->
+                    </p:column>
+                </p:dataTable>
+            </div>
+
+            <div class="ui-grid-row">
+                <h3>#{msg['content.queryForms.subheadline']}</h3>
+                <h:panelGrid columns="3" cellpadding="5">
+                    <p:outputLabel
+                            value="#{msg['generic.label.name']}:"
+                            indicateRequired="true"
+                            styleClass="color-red"
+                    />
+                    <p:inputText
+                            id="name"
+                            value="#{queryFormsController.queryFormName}"
+                            requiredMessage="#{msg['generic.message.enterName']}"
+                    />
+                    <p:message for="name" />
+
+                    <p:outputLabel value="#{msg['generic.label.description']}:" />
+                    <p:inputText id="description" value="#{queryFormsController.queryFormDescription}"/>
+                    <p:message for="description" />
+                </h:panelGrid>
+            </div>
+            <div class="ui-grid-row">
+                <p:commandButton
+                        action="#{authorizationController.addQueryForm(queryFormsController.queryFormName, queryFormsController.queryFormDescription)}"
+                        styleClass="submit"
+                        icon="ui-icon-check"
+                        value="#{msg['generic.button.create']}"
+                        ajax="false"
+                        update="@form"
+                />
+            </div>
+
+            <div class="ui-grid-row">
+                <span>#{msg['generic.message.requiredItems']}</span>
+            </div>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

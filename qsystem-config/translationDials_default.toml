@@ -1,0 +1,349 @@
+# ICT001
+
+[[ICT001]]
+alphaCode = "A"
+code = "0001"
+version = "01"
+validFrom = "20060101"
+validUntil = "20060601"
+label = "A"
+translatedLabel = "A"
+
+[[ICT001]]
+alphaCode = "B"
+code = "0002"
+version = "01"
+validFrom = "20060101"
+validUntil = "20060601"
+label = "B"
+translatedLabel = "B"
+
+[[ICT001]]
+alphaCode = "C"
+code = "0003"
+version = "01"
+validFrom = "20060101"
+validUntil = "20060601"
+label = "C"
+translatedLabel = "C"
+
+[[ICT001]]
+alphaCode = "D"
+code = "0004"
+version = "01"
+validFrom = "20060101"
+validUntil = "20060601"
+label = "D"
+translatedLabel = "D"
+
+# ICT002
+
+[[ICT002]]
+oldCode = "1"
+code = "0001"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "Person"
+translatedLabel = "Person"
+
+[[ICT002]]
+oldCode = "2"
+code = "0002"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "Vehicle"
+translatedLabel = "Vehicle"
+
+[[ICT002]]
+oldCode = "3"
+code = "0003"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "Document"
+translatedLabel = "Document"
+
+# ICT006
+
+[[ICT006]]
+alphaCode = "AF"
+code = "1234"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "AFGHANISTAN"
+translatedLabel = "AFGHANISTAN"
+
+[[ICT006]]
+alphaCode = "AL"
+code = "1235"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "ALBANIA"
+translatedLabel = "ALBANIA"
+
+[[ICT006]]
+alphaCode = "DZ"
+code = "1236"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "ALGERIA"
+translatedLabel = "ALGERIA"
+
+# ICT012
+
+[[ICT012]]
+code = "1234"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "ALFA ROMEO"
+translatedLabel = "ALFA ROMEO"
+
+[[ICT012]]
+code = "1235"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "AUDI"
+translatedLabel = "AUDI"
+
+[[ICT012]]
+code = "1236"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "AUSTIN"
+translatedLabel = "AUSTIN"
+
+[[ICT012]]
+code = "1237"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "AUTOBIANCHI"
+translatedLabel = "AUTOBIANCHI"
+
+
+# ICT013
+
+[[ICT013]]
+code = "0001"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "Unknown"
+translatedLabel = "Unknown"
+
+[[ICT013]]
+code = "0002"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "White"
+translatedLabel = "White"
+
+[[ICT013]]
+code = "0003"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "Black"
+translatedLabel = "Black"
+
+[[ICT013]]
+code = "0005"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "Blue"
+translatedLabel = "Blue"
+
+# ICT018
+
+[[ICT018]]
+code = "0001"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "Passport"
+translatedLabel = "Passport"
+
+[[ICT018]]
+code = "0002"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "Identity Document"
+translatedLabel = "Identity Document"
+
+[[ICT018]]
+code = "0003"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "Driving licence"
+translatedLabel = "Driving licence"
+
+# ICT021
+
+[[ICT021]]
+codeAlphabetic = ""
+codeNumeric = "AFN"
+code = "1234"
+version = "01"
+validFrom = "Afghani"
+validUntil = "20060101"
+label = "AFGHANISTAN"
+translatedLabel = "AFGHANISTAN"
+
+[[ICT021]]
+codeAlphabetic = ""
+codeNumeric = "ALL"
+code = "1235"
+version = "01"
+validFrom = "Lek"
+validUntil = "20060101"
+label = "ALBANIA"
+translatedLabel = "ALBANIA"
+
+[[ICT021]]
+codeAlphabetic = ""
+codeNumeric = "DZD"
+code = "1236"
+version = "01"
+validFrom = "Algerian Dinar"
+validUntil = "20060101"
+label = "ALGERIA"
+translatedLabel = "ALGERIA"
+
+# ICT031
+
+[[ICT031]]
+code = "0001"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "AA"
+translatedLabel = "AA"
+
+[[ICT031]]
+code = "0002"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "AC"
+translatedLabel = "AC"
+
+# ICT108
+
+[[ICT108]]
+code = "0001"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "fuzzy_text"
+translatedLabel = "Fuzzy text"
+
+[[ICT108]]
+code = "0002"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "zastupne_znaky"
+translatedLabel = "Zástupné znaky"
+
+[[ICT108]]
+code = "0003"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "kombinace_jmen"
+translatedLabel = "Kombinace jmen"
+
+[[ICT108]]
+code = "0004"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "fuzzy_text + zastupne_znaky"
+translatedLabel = "Fuzzy text + Zástupné znaky"
+
+[[ICT108]]
+code = "0005"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "fuzzy_text + zastupne_znaky + kombinace_jmen"
+translatedLabel = "Fuzzy text + Zástupné znaky + Kombinace jmen"
+
+[[ICT108]]
+code = "0006"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "fuzzy_text + kombinace_jmen"
+translatedLabel = "Fuzzy text + Kombinace jmen"
+
+[[ICT108]]
+code = "0007"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "zastupne_znaky + kombinace_jmen"
+translatedLabel = "Zástupné znaky + Kombinace jmen"
+
+[[ICT108]]
+code = "0008"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "neuplne_datum"
+translatedLabel = "Neúplné datum"
+
+[[ICT108]]
+code = "0010"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "fuzzy_cislo"
+translatedLabel = "Fuzzy číslo"
+
+[[ICT108]]
+code = "0011"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "fuzzy_cislo + zastupne_znaky"
+translatedLabel = "Fuzzy číslo + Zástupné znaky"
+
+# ICT129
+
+[[ICT129]]
+code = "0001"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "Female"
+translatedLabel = "Female"
+
+[[ICT129]]
+code = "0002"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "Male"
+translatedLabel = "Male"
+
+[[ICT129]]
+code = "0003"
+version = "01"
+validFrom = "20060101"
+validUntil = ""
+label = "Unknown"
+translatedLabel = "Unknown"
+

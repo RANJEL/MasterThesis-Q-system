@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+>
+
+    <h:head>
+        <f:facet name="first">
+            <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+            <title>#{msg['header.headline']} | #{msg['title.login']}</title>
+        </f:facet>
+    </h:head>
+
+    <h:body>
+        <f:facet name="last">
+            <h:outputStylesheet name="css/style.css" />
+        </f:facet>
+
+        <h:form prependId="false">
+
+            <!-- header -->
+            <div id="header" class="ui-grid-row">
+                <div id="header-left" class="ui-grid-col-12">
+                    <div class="ui-grid-row">
+                        <h1>#{msg['header.headline']}</h1>
+                    </div>
+                    <div class="ui-grid-row">
+                        <span>#{msg['header.version']}: #{appFeaturesController.appVersion}</span>
+                    </div>
+                </div>
+            </div>
+            <!-- /header -->
+
+            <!-- content -->
+                <p:panelGrid columns="1" styleClass="ui-fluid center ui-noborder">
+                    <h2>#{msg['content.login.headline']}</h2>
+
+                    <p:outputLabel value="#{msg['generic.message.loginFailed']}" styleClass="validation-message" rendered="${!empty param['error']}"/>
+
+                    <p:inputText id="username" placeholder="#{msg['generic.label.username']}"/>
+                    <p:password id="password" placeholder="#{msg['generic.label.password']}"/>
+
+                    <p:commandButton value="#{msg['generic.button.login']}" ajax="false"/>
+                </p:panelGrid>
+            <!-- /content -->
+
+        </h:form>
+    </h:body>
+</html>

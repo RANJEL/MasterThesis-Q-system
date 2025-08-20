@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ========================================================================= -->
+<!-- ========================================================================= -->
+<xsd:schema xmlns:aaarecorddt="http://www.siteone.com/aaa/xsd/v100/interface_types/record"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:aaadt="http://www.siteone.com/aaa/xsd/v100/interface_types/common"
+            targetNamespace="http://www.siteone.com/aaa/xsd/v100/interface_types/record" elementFormDefault="qualified"
+            attributeFormDefault="unqualified" version="4.0.0">
+    <xsd:import namespace="http://www.siteone.com/aaa/xsd/v100/interface_types/common" schemaLocation="CommonDataTypes.xsd"/>
+<!--    ANONYMIZED  -->
+</xsd:schema>

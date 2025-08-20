@@ -1,0 +1,7 @@
+# IS AAA interfaces list
+iSAAAFullInterfaceName = "Plne rozhrani"
+iSAAASimplifiedInterfaceName = "Zjednodusene rozhrani"
+
+# Q-system IS AAA interface configuration
+currentlyUsedISAAAInterface = "Plne rozhrani"
+preferredISAAAInterface = "Plne rozhrani"

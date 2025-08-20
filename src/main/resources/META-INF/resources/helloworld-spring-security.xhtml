@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+>
+
+<h:body>
+    <h:form>
+        <h:outputText value="#{'You are logged as '.concat(authorizationController.getLoggedUser().name)}"/>
+        <ul>You have assigned this ldap user roles:</ul>
+        <c:forEach var="role" items="#{authorizationController.getLoggedUser().ldapUserRoles}">
+            <li>#{role.getAuthority()}</li>
+        </c:forEach>
+        <ul>Assigned roles KNOWN for Q-system:</ul>
+        <c:forEach var="role" items="#{authorizationController.getLoggedUser().knownUserRoles}">
+            <li>#{role}</li>
+        </c:forEach>
+        <ul>Assigned roles UNKNOWN for Q-system:</ul>
+        <c:forEach var="role" items="#{authorizationController.getLoggedUser().unknownUserRoles}">
+            <li>#{role}</li>
+        </c:forEach>
+        <h3>Query forms intersection:</h3>
+        #{authorizationController.getLoggedUser().loggedUserQueryFormIntersection}
+    </h:form>
+    <div/>
+    <h:form onsubmit="this.action='#{request.contextPath}/logout';" class="logout-form">
+        <p:commandButton value="Logout" ajax="false"/>
+    </h:form>
+</h:body>
+</html>

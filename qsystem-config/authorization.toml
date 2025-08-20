@@ -1,0 +1,69 @@
+# User roles and allowed query forms for each user role
+[[definedUserRoles]]
+name = "DOTAZOVATEL"
+description = "Výchozí uživatelská role"
+queryForms = ["testQueryForm1", "testQueryForm2", "testQueryForm3"]
+
+[[definedUserRoles]]
+name = "ADMIN"
+description = "Role symbolizující, že uživatel je administrátor"
+queryForms = ["AllowEverythingQF"]
+
+# Query forms
+[[definedQueryForms]]
+name = "testQueryForm1"
+description = "Testovací forma dotazu 1"
+elementaryQueryForms = [
+"single_category:vehicle & zastupne_znaky & standard_query",
+"single_category:person & kombinace_jmen & standard_query",
+"single_category:person & fuzzy_cislo & standard_query",
+"single_category:person & fuzzy_cislo & standard_query"
+]
+
+[[definedQueryForms]]
+name = "testQueryForm2"
+description = "Testovací forma dotazu 2"
+elementaryQueryForms = ["single_category:vehicle & zastupne_znaky & standard_query"]
+
+[[definedQueryForms]]
+name = "testQueryForm3"
+description = "Testovací forma dotazu 3"
+elementaryQueryForms = [
+"single_category:vehicle & zastupne_znaky & standard_query",
+"single_category:vehicle & zastupne_znaky & standard_query",
+
+[[definedQueryForms]]
+name = "AllowEverythingQF"
+description = "Forma dotazu povolující všechny entity, modifikátory a typy dotazu"
+elementaryQueryForms = [
+"single_category:person & fuzzy_text & standard_query",
+"single_category:person & fuzzy_cislo & standard_query",
+"single_category:person & zastupne_znaky & standard_query",
+"single_category:person & kombinace_jmen & standard_query",
+"single_category:person & neuplne_datum & standard_query",
+"single_category:vehicle & fuzzy_text & standard_query",
+"single_category:vehicle & fuzzy_cislo & standard_query",
+"single_category:vehicle & zastupne_znaky & standard_query",
+"single_category:vehicle & kombinace_jmen & standard_query",
+"single_category:vehicle & neuplne_datum & standard_query",
+
+"multi_category:person & fuzzy_text & standard_query",
+"multi_category:person & fuzzy_cislo & standard_query",
+"multi_category:person & zastupne_znaky & standard_query",
+"multi_category:person & kombinace_jmen & standard_query",
+"multi_category:person & neuplne_datum & standard_query",
+"multi_category:other_number & fuzzy_text & standard_query",
+"multi_category:other_number & fuzzy_cislo & standard_query",
+"multi_category:other_number & zastupne_znaky & standard_query",
+"multi_category:other_number & kombinace_jmen & standard_query",
+"multi_category:other_number & neuplne_datum & standard_query",
+"multi_category:document & fuzzy_text & standard_query",
+"multi_category:document & fuzzy_cislo & standard_query",
+"multi_category:document & zastupne_znaky & standard_query",
+"multi_category:document & kombinace_jmen & standard_query",
+"multi_category:document & neuplne_datum & standard_query",
+
+"ALL & ALL & complement_query",
+"ALL & ALL & load_attachments",
+"ALL & ALL & load_links",
+]

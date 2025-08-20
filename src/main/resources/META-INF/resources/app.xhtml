@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+>
+
+    <h:head>
+        <f:facet name="first">
+            <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+            <title>#{msg['header.headline']} | Homepage</title>
+        </f:facet>
+    </h:head>
+
+    <h:body>
+        <f:facet name="last">
+            <h:outputStylesheet name="css/style.css" />
+        </f:facet>
+
+        <h:form id="app-form">
+            <p:growl
+                    id="growl"
+                    showDetail="true"
+                    sticky="true"
+            />
+
+            <div class="ui-fluid">
+                <ui:insert name="header">
+                    <ui:include src="components/header.xhtml" />
+                </ui:insert>
+                <div id="container" class="ui-grid-row">
+                    <ui:insert name="menu">
+                        <ui:include src="components/menu.xhtml" />
+                    </ui:insert>
+
+                    <p:outputPanel id="content-wrapper" style="display: flex;">
+                        <div id="content">
+                            <ui:insert>
+                                <ui:include src="components/breadcrumbs.xhtml" />
+                            </ui:insert>
+                            <ui:insert name="content">
+                                <ui:include src="components/content.xhtml" />
+                            </ui:insert>
+                        </div>
+                    </p:outputPanel>
+                </div>
+            </div>
+        </h:form>
+    </h:body>
+</html>

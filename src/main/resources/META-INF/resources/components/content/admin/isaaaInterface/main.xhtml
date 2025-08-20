@@ -1,0 +1,77 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+    <f:metadata>
+        <f:event
+                type="preRenderView"
+                listener="#{authorizationController.logEntryIntoAdministration('isaaaInterface')}"/>
+    </f:metadata>
+</h:head>
+
+<h:body>
+    <ui:composition template="../../../../app.xhtml">
+        <ui:define name="content">
+            <div class="ui-grid-row mt-15">
+                <span>#{msg['generic.label.preferredInterface']}:#{ISAAAInterfacesController.preferredISAAAInterface}</span>
+                <p:commandButton
+                        value="#{msg['generic.button.change']}"
+                        onclick="PF('dlgInterface').show();"
+                        type="button"
+                        class="submit ml-15"
+                />
+            </div>
+            <div class="ui-grid-row">
+                <span>#{msg['generic.label.currentInterface']}:#{ISAAAInterfacesController.currentlyUsedISAAAInterface}</span>
+                <p:commandButton
+                        value="#{msg['generic.button.setPreferred']}"
+                        action="#{ISAAAInterfacesController.preferredISAAAInterface(ISAAAInterfacesController.currentlyUsedISAAAInterface)}"
+                        class="submit submit-large ml-15"
+                        ajax="false"
+                />
+            </div>
+
+            <p:dialog
+                    header="#{msg['dialog.isaaaInterface.headline']}"
+                    widgetVar="dlgInterface"
+                    modal="true"
+                    height="100"
+                    resizable="false"
+                    closeOnEscape="true"
+            >
+                <div class="ui-grid-row">
+                    <p:selectOneRadio
+                            id="isaaaInterface"
+                            unselectable="true"
+                    >
+                        <f:selectItems
+                                value="#{ISAAAInterfacesController.ISAAAInterfaceNames}"
+                                var="isaaaInterfaceName"
+                                itemLabel="#{isaaaInterfaceName}"
+                                itemValue="#{isaaaInterfaceName}"
+                        />
+                    </p:selectOneRadio>
+                </div>
+                <div class="ui-grid-row">
+                    <p:commandButton
+                            value="#{msg['generic.button.save']}"
+                            action="#{ISAAAInterfacesController.preferredISAAAInterface(
+                                facesContext.externalContext.requestParameterMap.get('app-form:isaaaInterface')
+                            )}"
+                            class="submit"
+                            ajax="false"
+                            icon="ui-icon-check"
+                    />
+                </div>
+            </p:dialog>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

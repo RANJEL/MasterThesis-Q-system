@@ -1,0 +1,57 @@
+dn: ou=groups,dc=example,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: ou=people,dc=example,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+dn: uid=ben,ou=people,dc=example,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Ben Alex
+sn: Alex
+uid: ben
+userpassword: {SHA}nFCebWjxfaLbHHG1Qk5UU4trbvQ=
+# == benspassword
+
+dn: uid=bob,ou=people,dc=example,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Bob Hamilton
+sn: Hamilton
+uid: bob
+userpassword: {SSHA}3hKIYgUxgjf0clx7D+ncr8XsNlDIfDOx
+# == bobspassword
+
+dn: uid=lejnar,ou=people,dc=example,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Jan Lejnar
+sn: Lejnar
+uid: lejnar
+userpassword: admin
+
+dn: cn=admins,ou=groups,dc=example,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: admins
+ou: admin
+uniqueMember: uid=lejnar,ou=people,dc=example,dc=com
+
+dn: cn=dotazovatele,ou=groups,dc=example,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: dotazovatele
+ou: dotazovatel
+uniqueMember: uid=ben,ou=people,dc=example,dc=com
+uniqueMember: uid=bob,ou=people,dc=example,dc=com
+uniqueMember: uid=lejnar,ou=people,dc=example,dc=com

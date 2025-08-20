@@ -1,0 +1,143 @@
+@import '_variables';
+@import '_classes.scss';
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+#header {
+  background-color: $color-blue;
+  margin-bottom: 15px;
+  padding: 0 30px 15px 30px;
+
+  &, a {
+    color: $color-white;
+    text-decoration: none;
+  }
+
+  a {
+    &:hover {
+      color: $color-light-grey;
+    }
+  }
+
+
+  #header-right {
+    margin-top: 30px;
+
+    .ui-grid-row {
+      padding: 5px 0;
+    }
+  }
+}
+
+#menu {
+  padding-right: 15px;
+  display: flex;
+  float: left;
+
+  .menu-show-button {
+    margin-bottom: 15px;
+    width: 130px;
+
+    span {
+      font-size: 0.8em;
+    }
+  }
+
+  .ui-panelmenu-panel {
+    &:first-child, &:nth-child(2) {
+      .ui-panelmenu-content {
+        display: block;
+      }
+    }
+  }
+}
+
+#content {
+  width: 100%;
+
+  .query-panel {
+    .query-panel-row {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid $color-light-grey;
+
+      &:last-child {
+        border-bottom: 0;
+        margin-bottom: 15px;
+      }
+
+      .checkboxes {
+        margin-left: 30px;
+
+        .checkbox-wrap {
+          text-align: center;
+          padding-left: 15px;
+          padding-right: 15px;
+          display: block;
+          margin-bottom: 8px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .header {
+      .query-panel-row {
+        margin-bottom: 0;
+      }
+    }
+
+    .content {
+      .query-panel-row {
+        &:first-child {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+
+  .response-detail {
+    table {
+      border: 1px solid $color-light-grey;
+      width: 100%;
+
+      tr {
+        border-top: 1px solid $color-light-grey;
+
+        &:nth-child(odd) {
+          background-color: $color-lightest-grey;
+        }
+
+        td {
+          padding: 0.5em;
+
+          /*ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0 !important;
+          }*/
+        }
+      }
+    }
+  }
+
+  .column-for-edit {
+    width: 32px;
+    text-align: center;
+  }
+
+  .ui-button.submit {
+    width: 200px !important;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    &.submit-large {
+      width: 300px !important;
+    }
+  }
+}
+
+.ui-selectonemenu-filter-container {
+  width: 98% !important;
+}

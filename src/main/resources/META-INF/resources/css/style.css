@@ -1,0 +1,122 @@
+.mt-0 {
+  margin-top: 0; }
+
+.mb-0 {
+  margin-bottom: 0; }
+
+.mt-15 {
+  margin-top: 15px; }
+
+.mb-15 {
+  margin-bottom: 15px; }
+
+.ml-15 {
+  margin-left: 15px; }
+
+.mr-15 {
+  margin-right: 15px; }
+
+.color-red {
+  color: #f44336; }
+
+.color-blue {
+  color: #0000cc; }
+
+.validation-message {
+  color: #f44336; }
+
+.center {
+  margin: 0 auto; }
+
+.truncate {
+  max-width: 160px;
+  width: 160px\9; }
+  .truncate > div {
+    width: 160px\9;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    display: block;
+    position: absolute; }
+
+body {
+  font-family: Arial, sans-serif; }
+
+#header {
+  background-color: #0000cc;
+  margin-bottom: 15px;
+  padding: 0 30px 15px 30px; }
+  #header, #header a {
+    color: #ffffff;
+    text-decoration: none; }
+  #header a:hover {
+    color: #cccccc; }
+  #header #header-right {
+    margin-top: 30px; }
+    #header #header-right .ui-grid-row {
+      padding: 5px 0; }
+
+#menu {
+  padding-right: 15px;
+  display: flex;
+  float: left; }
+  #menu .menu-show-button {
+    margin-bottom: 15px;
+    width: 130px; }
+    #menu .menu-show-button span {
+      font-size: 0.8em; }
+  #menu .ui-panelmenu-panel:first-child .ui-panelmenu-content, #menu .ui-panelmenu-panel:nth-child(2) .ui-panelmenu-content {
+    display: block; }
+
+#content {
+  width: 100%; }
+  #content .query-panel .query-panel-row {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #cccccc; }
+    #content .query-panel .query-panel-row:last-child {
+      border-bottom: 0;
+      margin-bottom: 15px; }
+    #content .query-panel .query-panel-row .checkboxes {
+      margin-left: 30px; }
+      #content .query-panel .query-panel-row .checkboxes .checkbox-wrap {
+        text-align: center;
+        padding-left: 15px;
+        padding-right: 15px;
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold; }
+  #content .query-panel .header .query-panel-row {
+    margin-bottom: 0; }
+  #content .query-panel .content .query-panel-row:first-child {
+    padding-top: 0; }
+  #content .response-detail table {
+    border: 1px solid #cccccc;
+    width: 100%; }
+    #content .response-detail table tr {
+      border-top: 1px solid #cccccc; }
+      #content .response-detail table tr:nth-child(odd) {
+        background-color: #dddddd; }
+      #content .response-detail table tr td {
+        padding: 0.5em;
+        /*ul {
+          list-style: none;
+          padding-left: 0;
+          margin: 0 !important;
+        }*/ }
+  #content .column-for-edit {
+    width: 32px;
+    text-align: center; }
+  #content .ui-button.submit {
+    width: 200px !important;
+    margin-top: 15px;
+    margin-bottom: 15px; }
+    #content .ui-button.submit.submit-large {
+      width: 300px !important; }
+
+.ui-selectonemenu-filter-container {
+  width: 98% !important; }
+
+/*# sourceMappingURL=style.css.map */

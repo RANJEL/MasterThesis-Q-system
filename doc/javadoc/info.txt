@@ -1,0 +1,1 @@
+Po anonymizaci není bohužel možné javadoc přegenerovat, protože některé třídy byly odstraněny, tudíž nefunguje build jako takový, proto ani javadoc nelze vygenerovat.

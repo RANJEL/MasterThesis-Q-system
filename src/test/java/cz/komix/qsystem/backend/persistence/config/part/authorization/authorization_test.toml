@@ -1,0 +1,23 @@
+[[definedUserRoles]]
+name = "all"
+description = "Role povolující všechny formy dotazu"
+queryForms = ["testQueryForm3", "testQueryForm1", "testQueryForm2"]
+
+[[definedUserRoles]]
+name = "default"
+description = "Výchozí uživatelská role"
+queryForms = ["testQueryForm1"]
+[[definedQueryForms]]
+name = "testQueryForm1"
+description = "Testovací forma dotazu 1"
+elementaryQueryForms = ["single_category:vehicle & zastupne_znaky & standard_query", "single_category:person & kombinace_jmen & standard_query", "single_category:person & fuzzy_cislo & load_links", "single_category:person & fuzzy_cislo & load_attachments"]
+
+[[definedQueryForms]]
+name = "testQueryForm2"
+description = "Testovací forma dotazu 2"
+elementaryQueryForms = ["single_category:vehicle & zastupne_znaky & standard_query"]
+
+[[definedQueryForms]]
+name = "testQueryForm3"
+description = "Testovací forma dotazu 3"
+elementaryQueryForms = ["single_category:vehicle & zastupne_znaky & complement_query", "single_category:vehicle & zastupne_znaky & standard_query", "single_category:aircraft & zastupne_znaky & standard_query"]

@@ -1,0 +1,123 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+>
+
+<h:head>
+    <f:metadata>
+        <f:event
+                type="preRenderView"
+                listener="#{authorizationController.logEntryIntoAdministration('userRoles')}"/>
+    </f:metadata>
+</h:head>
+
+<h:body>
+    <ui:composition template="../../../../app.xhtml">
+        <ui:define name="content">
+            <div class="ui-grid-row">
+                <h2>#{msg['menu.administration.userRoles']}</h2>
+            </div>
+
+            <div class="ui-grid-row">
+                <p:dataTable
+                        var="userRole"
+                        value="#{authorizationController.allUserRoles}"
+                        rowIndexVar="index"
+                        id="userRolesList"
+                        rows="10"
+                        paginator="true"
+                        paginatorPosition="bottom"
+                        paginatorAlwaysVisible="false"
+                        paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                        rowsPerPageTemplate="5,10,50"
+                >
+                    <p:column headerText="#{msg['generic.label.name']}">
+                        <h:outputText value="#{userRole.name}"/>
+                    </p:column>
+                    <p:column headerText="#{msg['generic.label.description']}">
+                        <h:outputText value="#{userRole.description}"/>
+                    </p:column>
+                    <p:column class="column-for-edit">
+                        <p:button
+                                ajax="false"
+                                title="#{msg['generic.label.detail']}"
+                                icon="ui-icon-search"
+                                outcome="#{userRolesController.viewUserRoleDetail(userRole.id)}"
+                        />
+                    </p:column>
+                    <p:column class="column-for-edit">
+                        <p:commandButton
+                                action="#{authorizationController.deleteUserRole(userRole.name)}"
+                                title="#{msg['generic.label.delete']}"
+                                icon="ui-icon-trash"
+                                update="@form"
+                        >
+                            <p:confirm
+                                    header="#{msg['generic.header.confirm']}"
+                                    message="#{msg['generic.confirm.areYouSureDelete']}"
+                                    icon="ui-exclamation-triangle"
+                            />
+                        </p:commandButton>
+
+                        <!-- confirm dialog for deleting -->
+                        <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                            <p:commandButton
+                                    type="button"
+                                    value="#{msg['generic.button.delete']}"
+                                    styleClass="ui-confirmdialog-yes"
+                                    icon="ui-icon-check"
+                            />
+                            <p:commandButton
+                                    type="button"
+                                    value="#{msg['generic.button.cancel']}"
+                                    styleClass="ui-confirmdialog-no"
+                                    icon="ui-icon-cancel"
+                            />
+                        </p:confirmDialog>
+                        <!-- /confirm dialog for deleting -->
+                    </p:column>
+                </p:dataTable>
+            </div>
+            <div class="ui-grid-row">
+                <h3>#{msg['content.userRoles.subheadline']}</h3>
+                <h:panelGrid columns="3" cellpadding="5">
+                    <p:outputLabel
+                            value="#{msg['generic.label.name']}:"
+                            indicateRequired="true"
+                            styleClass="color-red"
+                    />
+                    <p:inputText
+                            id="name"
+                            value="#{userRolesController.userRoleName}"
+                            requiredMessage="#{msg['generic.message.enterName']}"
+                    />
+                    <p:message for="name" />
+
+                    <p:outputLabel value="#{msg['generic.label.description']}:"/>
+                    <p:inputText value="#{userRolesController.userRoleDescription}"/>
+                </h:panelGrid>
+            </div>
+            <div class="ui-grid-row">
+                <p:commandButton
+                        action="#{authorizationController.addUserRole(userRolesController.userRoleName, userRolesController.userRoleDescription)}"
+                        styleClass="submit"
+                        value="#{msg['generic.button.create']}"
+                        ajax="false"
+                        update="@form"
+                        icon="ui-icon-check"
+                />
+            </div>
+
+            <div class="ui-grid-row">
+                <span>#{msg['generic.message.requiredItems']}</span>
+            </div>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

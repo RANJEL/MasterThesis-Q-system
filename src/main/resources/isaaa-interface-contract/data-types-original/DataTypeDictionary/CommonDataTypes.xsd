@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ========================================================================= -->
+<!-- ========================================================================= -->
+<xsd:schema xmlns:aaadt="http://www.siteone.com/aaa/xsd/v100/interface_types/common"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.siteone.com/aaa/xsd/v100/interface_types/common" elementFormDefault="qualified"
+            attributeFormDefault="unqualified" version="4.0.0">
+    <!--    ANONYMIZED  -->
+</xsd:schema>
