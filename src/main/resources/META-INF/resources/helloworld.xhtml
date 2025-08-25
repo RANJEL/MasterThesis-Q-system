@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui"
+>
+
+<h:head>
+    <title>PrimeFaces Hello World Example</title>
+</h:head>
+
+<h:body>
+    <h:form id="helloworld-form">
+        <h:form id="search-criteria-form">
+            <p:inputText id="family_names"/>
+            <p:inputText id="first_names"/>
+
+            <p:commandButton id="dispatchButton"
+                             value="Non-Ajax Submit"
+                             action="#{queryMainController.dispatchStandardQuery('single_category', 'person')}"
+                             ajax="false">
+            </p:commandButton>
+        </h:form>
+
+        <h:form>
+            <h4>
+                <h:outputText value="#{msg['header.headline']}"/>
+            </h4>
+        </h:form>
+
+        <h1>App features</h1>
+        <h:form>
+            <h4>Typy dotazu: (viz O06)</h4>
+            <ol>
+                <c:forEach var="queryType" items="#{appFeaturesController.allQueryTypes}">
+                    <li>#{msg['appFeatures.queryTypes.'.concat(queryType.name)]}</li>
+                </c:forEach>
+            </ol>
+
+            <h4>Modifikátory dotazu: (viz O06, O02)</h4>
+            <ol>
+                <c:forEach var="queryModifier" items="#{appFeaturesController.allQueryModifiers}">
+                    <li>#{msg['appFeatures.queryModifiers.'.concat(queryModifier.name)]}</li>
+                </c:forEach>
+            </ol>
+
+            <h4>Jednoduché dotazy - entity: (viz O01, O06)</h4>
+            <ol>
+                <c:forEach var="queryEntityType"
+                           items="#{appFeaturesController.allSingleCategoryQueryEntities}">
+                    <li>#{msg['appFeatures.queryEntities.single_category.'.concat(queryEntityType.name)]} - isSelectable: #{queryEntityType.selectable}</li>
+                </c:forEach>
+            </ol>
+
+            <h4>Složené dotazy - entity: (viz O01, O06)</h4>
+            <ol>
+                <c:forEach var="queryEntityType"
+                           items="#{appFeaturesController.allMultiCategoryQueryEntities}">
+                    <li>#{msg['appFeatures.queryEntities.multi_category.'.concat(queryEntityType.name)]} - isSelectable: #{queryEntityType.selectable}</li>
+                </c:forEach>
+            </ol>
+
+            <h1>"Jednoduchý dotaz na 'Person'" viz O02</h1>
+            <h4>Vyhledávající kritéria, název, povolené kombinace modifikátorů - zbytek disable, frontendový typ kritéria + případně validační předpis </h4>
+            <ol>
+                <c:forEach var="searchCriteria"
+                           items="#{appFeaturesController.getAllSearchCriteria('single_category', 'person')}">
+                    <li>
+                        <div>
+                            jméno: #{msg['appFeatures.searchCriteria.'.concat(searchCriteria.name)]} <br/>
+                            povolené modifikátory: <br/>
+                            <ul>
+                                <c:forEach items="#{searchCriteria.allowedQueryModifiers}" var="allowedQueryModifier">
+                                    <li>#{msg['appFeatures.queryModifiers.'.concat(allowedQueryModifier.name)]}</li>
+                                </c:forEach>
+                            </ul>
+                            frontendový typ: #{searchCriteria.frontendElemType} <br/>
+                            validace: #{searchCriteria.frontendValidations} <br/>
+                            všechny modifikátory s checkable info: <br/>
+                            <ul>
+                                <c:forEach items="#{searchCriteria.queryModifiers}" var="queryModifier">
+                                    <li>#{msg['appFeatures.queryModifiers.'.concat(queryModifier.name)]} - checkable=#{queryModifier.checkable}</li>
+                                </c:forEach>
+                            </ul>
+                        </div>
+                    </li>
+                </c:forEach>
+            </ol>
+
+            <h4>Povolené kombinace vyhledávajících kritérií, bude sloužit k validaci po stisknutí "Odeslat dotaz"</h4>
+            <ol>
+                <c:forEach var="searchCriteriaCombinationRoot"
+                           items="#{appFeaturesController.getAllAllowedSearchCriteriaCombinations('single_category', 'person')}">
+                    <li>
+                        <c:forEach items="#{searchCriteriaCombinationRoot.searchCriteriaCombination}" var="x">
+                            #{msg['appFeatures.searchCriteria.'.concat(x.name)]} +
+                        </c:forEach>
+                    </li>
+                </c:forEach>
+            </ol>
+
+            <h2>Select box Státní občanství, hodnoty:</h2>
+            <ul>
+                <c:forEach items="#{translationDialsController.getEntriesFrom('Narodnost')}" var="catalogEntry">
+                    <li>
+                        #{catalogEntry}
+                    </li>
+                </c:forEach>
+            </ul>
+            <h4>Poznámka: Státní občanství odpovídá "frontendový typ: selectbox(Narodnost)" <br/>
+                Lze tedy frontendový typ zparsovat, aby se získal název tabulky - např. pomocí getFrontendElemType().replace("selectbox(", "").replace(")", "")
+                <br/>
+                A dosadit do volání výše: translationDialsController.getEntriesFrom('Narodnost'), tak se získají hodnoty číselníku
+            </h4>
+
+            Nalezený záznam = #{translationDialsController.findEntryInTable('CZECH REPUBLIC', 'LABEL', 'Narodnost')}
+        </h:form>
+
+    </h:form>
+</h:body>
+</html>

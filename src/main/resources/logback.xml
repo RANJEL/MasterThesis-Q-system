@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" debug="false">
+
+    <variable name="LOGS_FOLDER" value="./logs"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <target>System.out</target>
+
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <charset class="java.nio.charset.Charset">UTF-8</charset>
+            <pattern>%date|%thread|%-5level|%logger{10}: %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="QSYSTEM_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>${LOGS_FOLDER}/qsystem.log</file>
+        <append>true</append>
+        <encoder>
+            <charset class="java.nio.charset.Charset">UTF-8</charset>
+            <pattern>%date|%thread|%-5level|%logger{10}: %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="AUTHENTICATION_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>${LOGS_FOLDER}/authentication.log</file>
+        <append>true</append>
+        <encoder>
+            <charset class="java.nio.charset.Charset">UTF-8</charset>
+            <pattern>%date|%thread|%-5level|%logger{10}: %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="ACTIONS_IN_ADMIN_INTERFACE_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>${LOGS_FOLDER}/actionsInAdministratorInterface.log</file>
+        <append>true</append>
+        <encoder>
+            <charset class="java.nio.charset.Charset">UTF-8</charset>
+            <pattern>%date|%thread|%-5level|%logger{10}: %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="ISAAAA_AUDIT_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>${LOGS_FOLDER}/communicationLogWithISAAAA.log</file>
+        <append>true</append>
+        <encoder>
+            <charset class="java.nio.charset.Charset">UTF-8</charset>
+            <pattern>%date|%thread|%-5level|%logger{10}: %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="AD_AUDIT_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>${LOGS_FOLDER}/communicationLogWithAD.log</file>
+        <append>true</append>
+        <encoder>
+            <charset class="java.nio.charset.Charset">UTF-8</charset>
+            <pattern>%date|%thread|%-5level|%logger{10}: %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="cz.komix.qsystem.backend.logic.isaaa.AbstractISAAAAppInterface">
+        <appender-ref ref="ISAAAA_AUDIT_LOG"/>
+    </logger>
+
+    <logger name="cz.komix.qsystem.frontend.controller.query.QueryMainController">
+        <appender-ref ref="ISAAAA_AUDIT_LOG"/>
+    </logger>
+
+    <logger name="cz.komix.qsystem.backend.persistence.config">
+        <appender-ref ref="ACTIONS_IN_ADMIN_INTERFACE_LOG"/>
+    </logger>
+
+    <logger name="cz.komix.qsystem.backend.security.user">
+        <appender-ref ref="AUTHENTICATION_LOG"/>
+    </logger>
+
+    <logger name="org.springframework" level="WARN">
+        <appender-ref ref="AD_AUDIT_LOG"/>
+    </logger>
+    <!--    TODO uncomment, but make sure that those DEBUG messages doesn't appear in "QSYSTEM_LOG", as do now for some season -->
+    <!--    <logger name="org.springframework.security" level="DEBUG">-->
+    <!--        <appender-ref ref="AD_AUDIT_LOG"/>-->
+    <!--    </logger>-->
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="QSYSTEM_LOG"/>
+    </root>
+</configuration>

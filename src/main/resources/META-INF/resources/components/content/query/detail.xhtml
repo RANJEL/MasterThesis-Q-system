@@ -1,0 +1,51 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:body>
+    <ui:composition template="../../../app.xhtml">
+        <ui:define name="content">
+            <p:panel header="Metadata" toggleable="true" closable="true" toggleSpeed="500" closeSpeed="500" widgetVar="panel" style="margin-bottom:20px">
+                <p:dataTable var="result" selctionMode="single">
+                    <p:column headerText="Atribut">
+                        <h:outputText value="Atribut 1" />
+                        <h:outputText value="Atribut 2" />
+                        <h:outputText value="Atribut 3" />
+                    </p:column>
+                    <p:column headerText="Hodnota">
+                        <h:outputText value="Hodnota 1" />
+                        <h:outputText value="Hodnota 2" />
+                        <h:outputText value="Hodnota 3" />
+                    </p:column>
+                    <p:column style="width:32px;text-align: center">
+                        <p:commandButton icon="pi pi-search" title="View"/>
+                    </p:column>
+                </p:dataTable>
+            </p:panel>
+
+            <p:panel header="Doplňkové údaje" toggleable="true" closable="true" toggleSpeed="500" closeSpeed="500" widgetVar="panel" style="margin-bottom:20px">
+                <p:dataTable var="result" selctionMode="single">
+                    <p:column headerText="Atribut">
+                        <h:outputText value="Atribut 1" />
+                        <h:outputText value="Atribut 2" />
+                        <h:outputText value="Atribut 3" />
+                    </p:column>
+                    <p:column headerText="Hodnota">
+                        <h:outputText value="Hodnota 1" />
+                        <h:outputText value="Hodnota 2" />
+                        <h:outputText value="Hodnota 3" />
+                    </p:column>
+                    <p:column style="width:32px;text-align: center">
+                        <p:commandButton icon="pi pi-search" title="View"/>
+                    </p:column>
+                </p:dataTable>
+            </p:panel>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

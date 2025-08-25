@@ -1,0 +1,47 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+>
+
+<h:head>
+    <f:metadata>
+        <f:event
+                type="preRenderView"
+                listener="#{authorizationController.logEntryIntoAdministration('translationDials')}"/>
+    </f:metadata>
+</h:head>
+
+<h:body>
+    <ui:composition template="../../../../app.xhtml">
+        <ui:define name="content">
+            <h:form id="translation-dials" enctype="multipart/form-data">
+                <p:outputPanel id="file-metadata">
+                    <div class="ui-grid-row mt-15">
+                        <span>#{msg['generic.label.dateLastUpdate']}: </span>
+                        <span>#{translationDialsController.translationDialsCreationTime}</span>
+                    </div>
+                </p:outputPanel>
+                <div class="ui-grid-row mt-15">
+                    <p:fileUpload
+                            label="#{msg['generic.button.updateFile']}"
+                            fileUploadListener="#{translationDialsController.replaceTranslationDialsConfigFile}"
+                            update=":app-form:translation-dials:file-metadata"
+                            mode="advanced"
+                            ajax="true"
+                            auto="true"
+                            allowTypes="/(\.|\/)(toml)$/"
+                            class="submit submit-large"
+                            invalidFileMessage="#{msg['generic.message.invalidFileType']}"
+                    />
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

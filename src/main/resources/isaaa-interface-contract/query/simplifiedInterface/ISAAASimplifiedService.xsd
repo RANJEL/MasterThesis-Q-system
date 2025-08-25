@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://www.komix.cz/aaa/query/external"
+            xmlns:query="http://www.komix.cz/aaa/query/external" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:aaarecorddt="http://www.siteone.com/aaa/xsd/v100/interface_types/record" version="2019">
+    <xsd:import namespace="http://www.siteone.com/aaa/xsd/v100/interface_types/common"
+                schemaLocation="../../data-types-original/DataTypeDictionary/CommonDataTypes.xsd"/>
+    <xsd:import namespace="http://www.siteone.com/aaa/xsd/v100/interface_types/record"
+                schemaLocation="../../data-types-original/DataTypeDictionary/RecordDataTypes.xsd"/>
+
+    <!--    ANONYMIZED  -->
+
+</xsd:schema>

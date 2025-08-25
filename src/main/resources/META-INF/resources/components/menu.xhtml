@@ -1,0 +1,63 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+>
+
+<body>
+    <ui:composition>
+        <div id="menu">
+
+            <p:outputPanel id="menu-wrapper">
+                <p:commandButton
+                        value="#{msg[messagesController.menuLabel]}"
+                        action="#{messagesController.actionMenuShow()}"
+                        update=":app-form:menu-wrapper"
+                        class="menu-show-button"
+                        onkeydown="return false;"
+                />
+
+                <p:panelMenu rendered="#{messagesController.menuShow}">
+                    <p:submenu label="#{msg['appFeatures.queryEntities.single_category']}"
+                               expanded="true">
+                        <c:forEach var="queryEntity" items="#{appFeaturesController.allSingleCategoryQueryEntities}">
+                            <p:menuitem
+                                    url="#{'/components/content/query/main.xhtml?category_type=single_category&amp;entity_type='.concat(queryEntity.name)}"
+                                    disabled="#{!queryEntity.selectable}"
+                            >
+                                #{msg['appFeatures.queryEntities.single_category.'.concat(queryEntity.name)]}
+                            </p:menuitem>
+                        </c:forEach>
+                    </p:submenu>
+
+                    <p:submenu label="#{msg['appFeatures.queryEntities.multi_category']}"
+                               expanded="true">
+                        <c:forEach var="queryEntity" items="#{appFeaturesController.allMultiCategoryQueryEntities}">
+                            <p:menuitem
+                                    url="#{'/components/content/query/main.xhtml?category_type=multi_category&amp;entity_type='.concat(queryEntity.name)}"
+                                    disabled="#{!queryEntity.selectable}"
+                            >
+                                #{msg['appFeatures.queryEntities.multi_category.'.concat(queryEntity.name)]}
+                            </p:menuitem>
+                        </c:forEach>
+                    </p:submenu>
+
+                    <p:submenu label="#{msg['menu.administration']}"
+                               expanded="true"
+                               rendered="#{authorizationController.loggedUser.admin}">
+                        <p:menuitem url="/components/content/admin/queryForms/main.xhtml" value="#{msg['menu.administration.queryForms']}"/>
+                        <p:menuitem url="/components/content/admin/userRoles/main.xhtml" value="#{msg['menu.administration.userRoles']}"/>
+                        <p:menuitem url="/components/content/admin/translationDials/main.xhtml" value="#{msg['menu.administration.translationDials']}"/>
+                        <p:menuitem url="/components/content/admin/isaaaInterface/main.xhtml" value="#{msg['menu.administration.isaaaInterface']}"/>
+                    </p:submenu>
+                </p:panelMenu>
+            </p:outputPanel>
+
+        </div>
+    </ui:composition>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema targetNamespace="http://www.siteone.com/aaa/xsd/v100/interface_types/attribute"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:aaadt="http://www.siteone.com/aaa/xsd/v100/interface_types/common"
+            elementFormDefault="qualified"
+            version="4.0.0">
+    <xsd:import namespace="http://www.siteone.com/aaa/xsd/v100/interface_types/common"
+                schemaLocation="CommonDataTypes_reduced_for_JAXB_only.xsd"/>
+    <!--    ANONYMIZED  -->
+</xsd:schema>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+        targetNamespace="http://www.komix.cz/aaa/query/types"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:aaarecorddt="http://www.siteone.com/aaa/xsd/v100/interface_types/record"
+        xmlns:aaaattributedt="http://www.siteone.com/aaa/xsd/v100/interface_types/attribute"
+        xmlns:aaalinkdt="http://www.siteone.com/aaa/xsd/v100/interface_types/link"
+        elementFormDefault="qualified"
+        version="2019_v01">
+
+    <xsd:import namespace="http://www.siteone.com/aaa/xsd/v100/interface_types/common"
+                schemaLocation="../../data-types-modified-reduced-for-jaxb/DataTypeDictionary/CommonDataTypes_reduced_for_JAXB_only.xsd"/>
+    <xsd:import namespace="http://www.siteone.com/aaa/xsd/v100/interface_types/record"
+                schemaLocation="../../data-types-modified-reduced-for-jaxb/DataTypeDictionary/RecordDataTypes_reduced_for_JAXB_only.xsd"/>
+    <xsd:import namespace="http://www.siteone.com/aaa/xsd/v100/interface_types/attribute"
+                schemaLocation="../../data-types-modified-reduced-for-jaxb/DataTypeDictionary/FlagDataTypes_reduced_for_JAXB_only.xsd"/>
+    <xsd:import namespace="http://www.siteone.com/aaa/xsd/v100/interface_types/link"
+                schemaLocation="../../data-types-modified-reduced-for-jaxb/DataTypeDictionary/LinkDataTypes_reduced_for_JAXB_only.xsd"/>
+
+    <!--    ANONYMIZED  -->
+
+</xsd:schema>
